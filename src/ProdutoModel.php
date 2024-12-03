@@ -35,6 +35,42 @@ class ProdutoModel
         return $result->fetch_assoc();
     }
 
+    public function excluir($id)
+    {
+        // Primeiro, exclui as associações na tabela produtos_ingredientes
+        $sql = "DELETE FROM produtos_ingredientes WHERE produto_id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+
+        // Depois, exclui o produto da tabela produtos
+        $sql = "DELETE FROM produtos WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $id);
+
+        return $stmt->execute(); // Retorna true ou false com base no sucesso da execução
+    }
+
+
+    // Obter os ingredientes e suas quantidades associados a um produto
+    public function obterIngredientesPorProduto($produtoId)
+    {
+        $sql = "SELECT ingrediente_id, quantidade 
+            FROM produtos_ingredientes 
+            WHERE produto_id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bind_param("i", $produtoId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $ingredientes = [];
+        while ($row = $result->fetch_assoc()) {
+            $ingredientes[$row['ingrediente_id']] = $row['quantidade'];
+        }
+
+        return $ingredientes;
+    }
+
     // Atualizar produto
     public function atualizar($id, $nome, $despesas_op, $margem_lucro)
     {

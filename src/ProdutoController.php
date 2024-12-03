@@ -33,6 +33,7 @@ class ProdutoController
         // Chama o método de cadastro no modelo
         return $this->produtoModel->cadastrar($nome, $despesas_op, $margem_lucro, $ingredientes_quantidades);
     }
+
     // Método para obter todos os ingredientes disponíveis
     public function obterIngredientes()
     {
@@ -40,7 +41,26 @@ class ProdutoController
         return $this->produtoModel->obterIngredientes();
     }
 
-    // Lista todos os ingredientes
+    // Método para obter os ingredientes de um produto específico
+    public function obterIngredientesPorProduto($produtoId)
+    {
+        // Chama o método do modelo para buscar os ingredientes do produto
+        return $this->produtoModel->obterIngredientesPorProduto($produtoId);
+    }
+
+    // Método para excluir um produto
+    public function excluir($id)
+    {
+        // Verificar se o ID é válido
+        if (!is_numeric($id)) {
+            throw new Exception("ID inválido para excluir o produto.");
+        }
+
+        // Chama o método de exclusão no modelo e retorna o resultado
+        return $this->produtoModel->excluir($id);
+    }
+
+    // Lista todos os produtos
     public function listarTodos()
     {
         return $this->produtoModel->listarTodos();

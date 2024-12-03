@@ -24,7 +24,7 @@
                     <a class="nav-link" href="../src/cadastrar_produto.php">Cadastrar Produto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../src/visualizar_produtos.php">Visualizar Produtos</a>
+                    <a class="nav-link" href="../src/visualizar_produto.php">Visualizar Produtos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="visualizar_ingrediente.php">Visualizar Ingredientes</a>

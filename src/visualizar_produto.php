@@ -1,4 +1,5 @@
 <?php
+session_start(); // Iniciar a sessão
 
 require_once 'ProdutoController.php'; // Inclui o controlador do produto
 require_once 'IngredienteController.php'; // Inclui o controlador do ingrediente
@@ -26,6 +27,23 @@ $produtos = $produtoController->listarTodos(); // Método para listar todos os p
 
 <body>
     <?php include '../public/navbar.php'; ?>
+
+    <!-- Exibir mensagem de ingrediente atualizado -->
+    <?php if (!empty($_SESSION['alert_message_atualizado'])): ?>
+        <div class="alert alert-success">
+            <?php echo $_SESSION['alert_message_atualizado']; ?>
+        </div>
+        <?php unset($_SESSION['alert_message_atualizado']); // Limpa a mensagem da sessão 
+        ?>
+        <!-- Exibir mensagem de ingrediente excluido -->
+    <?php elseif (!empty($_SESSION['alert_message_excluido'])): ?>
+        <div class="alert alert-danger">
+            <?php echo $_SESSION['alert_message_excluido']; ?>
+        </div>
+        <?php unset($_SESSION['alert_message_excluido']); // Limpa a mensagem da sessão 
+        ?>
+    <?php endif; ?>
+
     <div class="container mt-5">
         <h2 class="text-center mb-4">Lista de Produtos</h2>
         <?php if ($mensagem): ?>
