@@ -1,0 +1,151 @@
+:root {
+    --gradient-bg: linear-gradient(to bottom, #0f0c29, #45e4f6, #24243e);
+    --primary-color: #055470;
+    --primary-hover: #20becf;
+    --text-color: #fff;
+    --input-bg: #e0dede;
+
+
+}
+
+.body-login {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: var(--gradient-bg);
+}
+
+.main {
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+    background: var(--gradient-bg);
+    box-shadow: 5px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+#chk {
+    display: none;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    color: var(--text-color);
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+input {
+    width: 60%;
+    height: 30px;
+    background: var(--input-bg);
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.body-login button {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: var(--text-color);
+    background: var(--primary-color);
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+.login {
+    height: 460px;
+    background: #eee;
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: 0.8s ease-in-out;
+}
+
+.login label {
+    color: var(--primary-color);
+    transform: scale(0.6);
+}
+
+#chk:checked~.login {
+    transform: translateY(-500px);
+}
+
+#chk:checked~.login label {
+    transform: scale(1);
+}
+
+#chk:checked~.signup label {
+    transform: scale(0.6);
+}
+
+.success-popup {
+    position: fixed;
+    top: 88%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0aef4393;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.em;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+}
+
+.success-popup.show,
+.error-popup.show {
+    display: block;
+}
+
+.error-popup {
+    position: fixed;
+    top: 88%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ec0a0a93;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.em;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+}
