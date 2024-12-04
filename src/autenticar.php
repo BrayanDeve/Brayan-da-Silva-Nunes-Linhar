@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: ../public/dashboard.php');
         exit();
     } else {
-        header("Location: ../public/login.php?error=credenciais_invalidas");
+        header("Location: ../public/index.php?error=credenciais_invalidas");
         exit();
     }
 }

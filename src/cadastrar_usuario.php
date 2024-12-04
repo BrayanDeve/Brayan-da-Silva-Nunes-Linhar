@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="message-container">
                 <h1>E-mail já cadastrado!</h1>
                 <p>O e-mail informado já está registrado no sistema. Tente outro ou faça login.</p>
-                <a href="../public/login.php">Voltar ao Registro</a>
+                <a href="../public/index.php">Voltar ao Registro</a>
             </div>
         </body>
         </html>
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Executando a consulta
     if ($conn->query($sql) === TRUE) {
         // Cadastro bem-sucedido, redirecionando para a página de login
-        header("Location: ../public/login.php?success=cadastro_sucesso");
+        header("Location: ../public/index.php?success=cadastro_sucesso");
         exit();
     } else {
         // Caso ocorra algum erro

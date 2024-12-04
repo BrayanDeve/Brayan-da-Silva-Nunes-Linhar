@@ -27,10 +27,10 @@
                     <a class="nav-link" href="../src/visualizar_produto.php">Visualizar Produtos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="visualizar_ingrediente.php">Visualizar Ingredientes</a>
+                    <a class="nav-link" href="../src/visualizar_ingrediente.php">Visualizar Ingredientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
+                    <a class="nav-link" href="../src/logout.php">Logout</a>
                 </li>
             </ul>
         </div>

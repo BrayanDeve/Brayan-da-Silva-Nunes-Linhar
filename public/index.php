@@ -52,7 +52,7 @@ if (isset($_GET['error']) && $_GET['error'] === 'credenciais_invalidas') {
         <input type="checkbox" id="chk" aria-hidden="true" <?php echo $checked; ?>>
 
         <div class="signup">
-            <form action="/tcc/src/cadastrar_usuario.php" method="POST">
+            <form action="../src/cadastrar_usuario.php" method="POST">
                 <label for="chk" aria-hidden="true">Registrar-se</label>
                 <input type="text" name="nome_usuario" placeholder="Usuário" required>
                 <input type="email" name="email" placeholder="Email" required>
@@ -60,9 +60,9 @@ if (isset($_GET['error']) && $_GET['error'] === 'credenciais_invalidas') {
                 <button type="submit">Registrar</button>
             </form>
         </div>
-
+        
         <div class="login">
-            <form action="/tcc/src/autenticar.php" method="POST">
+            <form action="../src/autenticar.php" method="POST">
                 <label for="chk" aria-hidden="true">Acessar</label>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="senha" placeholder="Senha" required>
